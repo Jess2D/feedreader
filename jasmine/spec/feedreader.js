@@ -50,14 +50,12 @@ $(function() {
          * and that the name is not empty.
          */
         it('Name are defined', function() {
-            for(let i= 0; i<allFeeds.length; i++){
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBe('');
-                expect(allFeeds[i].name).not.toBeNull();
-            }   
+            allFeeds.map((element)=>{
+                                expect(element.name).toBeDefined();
+                                expect(element.name).not.toBe('');
+                                expect(element.name).not.toBeNull();
+            });  
         });
-
-    });
 
 
     /* TODO: Write a new test suite named "The menu" */
