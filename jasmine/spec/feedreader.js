@@ -43,7 +43,7 @@ $(function() {
             for(i= 0; i<allFeeds.length; i++){
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url).not.toBe('');
-                expect(allFeeds[i].url).not.toBe(null);
+                expect(allFeeds[i].url).not.toBeNull();
             }   
         });
         /* TODO: Write a test that loops through each feed
@@ -55,7 +55,7 @@ $(function() {
             for(i= 0; i<allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name).not.toBe('');
-                expect(allFeeds[i].name).not.toBe(null);
+                expect(allFeeds[i].name).not.toBeNull();
             }   
         });
 
@@ -69,8 +69,10 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('Hidden by default', function(){
-            expect(menu);
+          let menu = document.querySelector('body').classList;
+
+         it('Hidden by default', function(){
+            expect(menu).toContain('menu-hidden');
          });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
