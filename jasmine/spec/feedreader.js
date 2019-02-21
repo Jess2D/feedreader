@@ -56,6 +56,7 @@ $(function() {
                                 expect(element.name).not.toBeNull();
             });  
         });
+    });
 
 
     /* TODO: Write a new test suite named "The menu" */
