@@ -39,20 +39,18 @@ $(function() {
          */
 
         it('URL are defined', function() {
-            var i;
-            for(i= 0; i<allFeeds.length; i++){
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe('');
-                expect(allFeeds[i].url).not.toBeNull();
-            }   
+            allFeeds.map((element)=>{
+                                expect(element.url).toBeDefined();
+                                expect(element.url).not.toBe('');
+                                expect(element.url).not.toBeNull();
+            });  
         });
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
         it('Name are defined', function() {
-            var i;
-            for(i= 0; i<allFeeds.length; i++){
+            for(let i= 0; i<allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name).not.toBe('');
                 expect(allFeeds[i].name).not.toBeNull();
