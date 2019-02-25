@@ -109,9 +109,20 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection',function(){
+        let oldFeed = [];
+        let newFeed = [];
 
-        it('should grab new feed selection', function(){
-            expect(document.querySelector('body').classList).toContain('menu-hidden');
+        beforeEach(function (done) {
+            loadFeed(0, function(){
+                oldFeed = document.querySelector('.feed');
+            });    
+            done(); 
+        });
+
+        it('should grab new feed selection', function(done){
+            newFeed = document.querySelector('.feed');
+            expect(newFeed).not.toBe(oldFeed);
+            done();
         });
     });
 }());
