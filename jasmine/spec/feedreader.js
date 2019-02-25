@@ -1,13 +1,4 @@
-/* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
 
-/* We're placing all of our tests within the $() function,
- * since some of these tests may require DOM elements. We want
- * to ensure they don't run until the DOM is ready.
- */
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
@@ -49,7 +40,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('Name are defined', function() {
+        it('name are defined', function() {
             allFeeds.map((element)=>{
                                 expect(element.name).toBeDefined();
                                 expect(element.name).not.toBe('');
@@ -66,7 +57,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it('Hidden by default', function(){
+         it('should be able hidden by default', function(){
             expect(document.querySelector('body').classList).toContain('menu-hidden');
          });
          /* TODO: Write a test that ensures the menu changes
@@ -74,7 +65,7 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-         it('Change visibility', function(){
+         it('should be able change visibility', function(){
             let body = document.querySelector('body');
             let menu = document.querySelector('.menu-icon-link');
             menu.click();
