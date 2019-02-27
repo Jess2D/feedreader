@@ -67,13 +67,15 @@ $(function() {
             loadFeed(0, function(){
                 oldFeed = document.querySelector('.feed');
             });    
+
+            loadFeed(1, function(){
+                newFeed = document.querySelector('.feed');
+            });   
             done(); 
         });
 
-        it('should grab new feed selection', function(done){
-            newFeed = document.querySelector('.feed');
+        it('should grab new feed selection', function(){
             expect(newFeed).not.toBe(oldFeed);
-            done();
         });
     });
 }());
