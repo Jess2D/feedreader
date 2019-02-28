@@ -63,19 +63,18 @@ $(function() {
         let oldFeed = [];
         let newFeed = [];
 
-        beforeEach(function (done) {
+        beforeEach(function(done){
             loadFeed(0, function(){
                 oldFeed = document.querySelector('.feed');
-            });    
-
-            loadFeed(1, function(){
-                newFeed = document.querySelector('.feed');
-            });   
-            done(); 
+                loadFeed(1, function(){
+                    newFeed = document.querySelector('.feed');
+                    done();
+                });
+            });      
         });
 
         it('should grab new feed selection', function(){
-            expect(newFeed).not.toBe(oldFeed);
+            expect(oldFeed).not.toBe(newFeed);
         });
     });
 }());
